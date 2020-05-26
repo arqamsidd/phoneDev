@@ -26,12 +26,14 @@ if ($result-> num_rows>0){
   while($row=$result->fetch_array()){
     $output.='<tr>
        <td>'. $row['id']   .' </td>
-       <td> '. $row['id']   .'  </td>
-       <td> '. $row['id']   .'  </td>
-       <td>   '. $row['id']   .'  </td>
-       <td>   '. $row['id']   .'  </td> 
-       <td>   '. $row['id']   .'  </td>
-       <td> </td>
+       <td> '. $row['Name']   .'  </td>
+       <td> '. $row['Mg']   .'  </td>
+       <td>   '. $row['Retail_Price']   .'  </td>
+       <td>   '. $row['Used_for']   .'  </td> 
+       <td>   '. $row['Side_Effects']   .'  </td>
+       <td>  <a href="javascript:increment()">
+          <span class="glyphicon glyphicon-plus"></span></a>
+       </td>
     
     
     </tr>';
@@ -39,4 +41,8 @@ if ($result-> num_rows>0){
   
   $output.= '</tbody>
   </table>';
+  echo $output;
+} 
+else{
+  echo '<h4 class="text-center text-danger">No result found!</h4>';
 }
